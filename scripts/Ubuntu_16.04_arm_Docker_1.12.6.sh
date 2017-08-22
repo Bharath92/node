@@ -42,16 +42,16 @@ check_docker_opts() {
   echo "Disabling docker tcp listener"
   sudo sh -c "sed -e s/\"-H tcp:\/\/0.0.0.0:4243\"//g -i /etc/default/docker"
 }
-
-restart_docker_service() {
-  echo "checking if docker restart is necessary"
-  if [ $docker_restart == true ]; then
-    echo "restarting docker service on reset"
-    exec_cmd "systemctl restart docker"
-  else
-    echo "docker_restart set to false, not restarting docker daemon"
-  fi
-}
+#
+# restart_docker_service() {
+#   echo "checking if docker restart is necessary"
+#   if [ $docker_restart == true ]; then
+#     echo "restarting docker service on reset"
+#     exec_cmd "systemctl restart docker"
+#   else
+#     echo "docker_restart set to false, not restarting docker daemon"
+#   fi
+# }
 
 install_ntp() {
   {
@@ -80,11 +80,11 @@ main() {
   trap before_exit EXIT
   exec_grp "setup_shippable_user"
 
-  trap before_exit EXIT
-  #exec_grp "check_docker_opts"
-
-  trap before_exit EXIT
-  exec_grp "restart_docker_service"
+  # trap before_exit EXIT
+  # exec_grp "check_docker_opts"
+  #
+  # trap before_exit EXIT
+  # exec_grp "restart_docker_service"
 
   trap before_exit EXIT
   exec_grp "install_ntp"

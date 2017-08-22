@@ -108,6 +108,8 @@ boot() {
   __process_msg "Loading shippable envs"
   source $NODE_ENV
 
+  EXEC_IMAGE="drydock/genexec:arm"
+
   if [ "$EXEC_CONTAINER_NAME" == "" ]; then
     __process_msg "No container name specified for booting, skipping"
   else
