@@ -47,7 +47,7 @@ restart_docker_service() {
   echo "checking if docker restart is necessary"
   if [ $docker_restart == true ]; then
     echo "restarting docker service on reset"
-    exec_cmd "sudo service docker restart"
+    exec_cmd "systemctl restart docker"
   else
     echo "docker_restart set to false, not restarting docker daemon"
   fi
