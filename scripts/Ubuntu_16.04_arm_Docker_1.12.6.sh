@@ -81,7 +81,7 @@ main() {
   exec_grp "setup_shippable_user"
 
   trap before_exit EXIT
-  exec_grp "check_docker_opts"
+  #exec_grp "check_docker_opts"
 
   trap before_exit EXIT
   exec_grp "restart_docker_service"

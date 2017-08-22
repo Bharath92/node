@@ -28,7 +28,7 @@ readonly CEXEC_LOCATION_ON_HOST="/home/shippable/cexec"
 readonly CACHE_STORE_LOCATION="/home/shippable/cache"
 readonly BUILD_LOCATION="/build"
 readonly DOCKER_CLIENT_LEGACY="/usr/bin/docker"
-readonly DOCKER_CLIENT_LATEST="/opt/docker/docker"
+readonly DOCKER_CLIENT_LATEST="/usr/bin/docker"
 readonly BOOT_WAIT_TIME=10
 readonly SWAP_FILE_PATH="/root/.__sh_swap__"
 
